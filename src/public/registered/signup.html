@@ -1,0 +1,47 @@
+<fieldset class="personalInfo">
+    <form name='signupform' novalidate> 
+    <div class="panel panel-default">
+    <div class="panel-header">
+        <h3 class="center">Sign up to receive letters from our restaurant </h3>
+            <div ng-if="!signUpCtrl.existing()">
+                You are registered, you may retrieve your registration info <a ui-sref=public.myinfo> here</a>.
+            </div>
+    </div>
+<div class="panel-body">
+
+<div>
+    <label for="name" min-width="50px">Name: </label>
+<input type="text" name="name" ng-model="signUpCtrl.name" required min-length="4"> {{signUpCtrl.name}}
+</div>
+<div>
+    <label for="surname">Surname: </label>
+<input type="text" name="surname" ng-model="signUpCtrl.surname" required min-length="4"> {{signUpCtrl.surname}}
+</div>
+<div>
+    <label for="email">Email: </label>
+<input type="email" name="email" ng-model="signUpCtrl.email" required> {{signUpCtrl.email}}
+</div>
+<div>
+    <label for="phone">Phone: </label>
+<input type="text" name="phone" ng-model="signUpCtrl.phone" min-length="6"> {{signUpCtrl.phone}}
+</div>
+<div>
+    <label for="fave">Your Team: </label>
+<input type="text" name="fave" ng-model="signUpCtrl.fave"> {{signUpCtrl.fave}}
+</div>
+</div>
+
+<div class="panel-footer">
+
+
+<p ng-if="signupform.$invalid">Please fill in all necessary information to submit</p>
+<button class="submitbutton" ng-if="signupform.$valid" ng-click="signUpCtrl.go()">Submit</button>
+<p ng-if="signUpCtrl.submitted && signUpCtrl.response==1">No such menu number exists</p>
+<p ng-if="signUpCtrl.submitted">Your information has been saved</p>
+</div>
+    </div>
+</form>
+</fieldset>
+
+<!-- !(signUpCtrl.email.length>0 && signUpCtrl.surname.length>3 && signUpCtrl.name.length>3 && signupform.phone.$error.number) -->
+

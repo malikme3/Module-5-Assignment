@@ -1,0 +1,60 @@
+.loading-indicator {
+    display: block;
+    width: 70px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 40%;
+    z-index: 100;
+    background-color: #FFF;
+}
+
+.loading-indicator img {
+    width: 70px;
+    background-color: #FFF;
+}
+
+.ui-view-placeholder {
+    margin-top: 60px;
+}
+
+.personalInfo {
+  color: white;
+  background-color: #222;
+  font-family: 'Oxygen', sans-serif;
+
+}
+
+.ng-untouched {
+        background-color: white;
+        color:black;
+}  
+
+.ng-touched.ng-valid {
+    color:black;
+    border: 2px green solid;
+    background-color: white;
+}
+.ng-touched.ng-invalid {
+    color:black;
+    border: 2px red solid;
+    background-color: white;
+}
+
+.fieldset .form .label, .personalInfo panel-body .sit-before {
+    min-width: 100px;
+    width:80px;
+    border: 2px black solid;
+    color: white;
+    background-color: #222;
+}
+.panel, .panel-default {
+    color: white;
+    background-color: #222;
+}
+
+.personalInfo .panel .panel-footer .submitbutton {
+    color: #61122f;
+    background-color: #f6b319;
+}
