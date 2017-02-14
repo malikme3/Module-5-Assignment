@@ -30,6 +30,18 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
+
+    .state('public.matches', {
+      url: '/matches',
+      templateUrl: 'src/public/menu/menu.html',
+      controller: 'MenuController',
+      controllerAs: 'menuCtrl',
+      resolve: {
+        menuCategories: ['MenuService', function (MenuService) {
+        return MenuService.getMatchesResult();
+        }]
+      }
+    })
     // I add this - begin
     .state('public.myinfo', {
       url: '/register/myinfo',
