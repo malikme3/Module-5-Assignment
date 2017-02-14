@@ -29,9 +29,10 @@ function MenuService($http, ApiPath, $q) {
 
   service.getMatchesResult = function () {
     var config = {};
+	var gUrl = '/Module-5-Assignment-master/src/common/model/demo.text',
+		lUrl = '/src/common/model/demo.text';
 
-
-    return $http.get('/src/common/model/demo.text', config).then(function (response) {
+    return $http.get(gUrl, config).then(function (response) {
       return response.data;
     });
   };
