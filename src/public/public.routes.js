@@ -21,8 +21,8 @@ function routeConfig ($stateProvider) {
     })
     .state('public.menu', {
       url: '/menu',
-      templateUrl: 'src/public/menu/menu.html',
-      controller: 'MenuController',
+      templateUrl: 'src/public/results/result.html',
+      controller: 'ResultController',
       controllerAs: 'menuCtrl',
       resolve: {
         menuCategories: ['MenuService', function (MenuService) {
@@ -33,11 +33,11 @@ function routeConfig ($stateProvider) {
 
     .state('public.matches', {
       url: '/matches',
-      templateUrl: 'src/public/menu/menu.html',
-      controller: 'MenuController',
+      templateUrl: 'src/public/results/result.html',
+      controller: 'ResultController',
       controllerAs: 'menuCtrl',
       resolve: {
-        menuCategories: ['MenuService', function (MenuService) {
+        results: ['MenuService', function (MenuService) {
         return MenuService.getMatchesResult();
         }]
       }

@@ -20,9 +20,13 @@
         background-color: #167F92;
         color: #024457;
     }
+    th {
+        background-color: #4CAF50;
+        color: #024457;
+    }
 </style>
 
-<table>
+<table align="left|right|center|justify|char">
     <th>Match ID</th>
     <th>Match Date</th>
     <th>Host Team</th>
@@ -30,14 +34,14 @@
     <th>Ground</th>
     <th>Man of the Match</th>
     <th>Match Status</th>
-    <tr ng-repeat="match in $ctrl.category">
-        <th>{{match.id}}</th>
-        <th>{{match.match_date}}</th>
-        <th>{{match.guest-team}}</th>
-        <th>{{match.host-team}}</th>
-        <th>{{match.ground}}</th>
-        <th>{{match.man-of-the-match}}</th>
-        <th>{{match.status}}</th>
+    <tr ng-repeat="match in $ctrl.category | limitTo : '10'">
+        <td>{{match.id}}</td>
+        <td>{{match.match_date}}</td>
+        <td>{{match.guest-team}}</td>
+        <td>{{match.host-team}}</td>
+        <td>{{match.ground}}</td>
+        <td>{{match.man-of-tde-match}}</td>
+        <td>{{match.status}}</th>
 
     </tr>
 </table>

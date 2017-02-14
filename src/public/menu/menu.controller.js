@@ -4,10 +4,10 @@
 angular.module('public')
 .controller('MenuController', MenuController);
 
-MenuController.$inject = ['menuCategories'];
-function MenuController(menuCategories) {
+MenuController.$inject = ['results'];
+function MenuController(results) {
   var $ctrl = this;
-  $ctrl.menuCategories = menuCategories;
+  $ctrl.menuCategories = results;
 }
 
 
