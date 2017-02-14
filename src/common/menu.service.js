@@ -31,7 +31,7 @@ function MenuService($http, ApiPath, $q) {
     var config = {};
 
 
-    return $http.get('/src/common/model/demo.json', config).then(function (response) {
+    return $http.get('/src/common/model/demo.text', config).then(function (response) {
       return response.data;
     });
   };
