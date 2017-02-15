@@ -1,44 +1,8 @@
-
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: grey;
-}
-tr:nth-child(odd) {
-    background-color: #167F92;
-    color: #024457;
-}
-</style>
-
-
-<table>
-  <th>Match ID</th>
-  <th>Match Date</th>
-  <th>Host Team</th>
-  <th>Guest Team</th>
-  <th>Ground</th>
-  <th>Man of the Match</th>
-  <th>Match Status</th>
-    <tr ng-repeat="match in $ctrl.category">
-        <th>{{match.id}}</th>
-        <th>{{match.match_date}}</th>
-        <th>{{match.guest-team}}</th>
-          <th>{{match.host-team}}</th>
-          <th>{{match.ground}}</th>
-          <th>{{match.man-of-the-match}}</th>
-          <th>{{match.status}}</th>
-
-
-    </tr>
-</table>
+<div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+  <a ui-sref="public.menuitems({category: $ctrl.category.short_name})">
+    <div class="category-tile">
+      <img width="200" height="200" ng-src="images/menu/{{$ctrl.category.short_name}}/{{$ctrl.category.short_name}}.jpg" alt="{{$ctrl.category.name}}">
+      <span>{{$ctrl.category.name}}</span>
+    </div>
+  </a>
+</div>
