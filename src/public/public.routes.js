@@ -79,6 +79,11 @@ function routeConfig ($stateProvider) {
       controller: 'SignUpController',
       controllerAs: 'signUpCtrl'
     })
+
+    .state('public.team', {
+      url: '/club/team',
+      templateUrl: 'src/public/team/team.html'
+    })
     // I add this - end
     .state('public.menuitems', {
       url: '/menu/{category}',
