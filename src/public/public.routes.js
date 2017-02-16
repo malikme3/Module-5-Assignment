@@ -42,6 +42,23 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
+// For Club's teams
+    .state('public.teams', {
+      url: '/club/Tiger',
+      templateUrl: 'src/public/team/teams.html',
+      controller: 'TeamsController',
+      controllerAs: 'teamsCtrl',
+      resolve: {
+        results: ['TeamService', function (TeamService) {
+        return TeamService.getComingMatches();
+      }],
+      team: ['$stateParams','TeamService', function ($stateParams,TeamService) {
+      return TeamService.getSource();
+    }]
+    }
+
+    })
+
    .state('public.availability', {
       url: '/availability',
       templateUrl: 'src/public/availability/availability.html',
@@ -80,10 +97,6 @@ function routeConfig ($stateProvider) {
       controllerAs: 'signUpCtrl'
     })
 
-    .state('public.team', {
-      url: '/club/team',
-      templateUrl: 'src/public/team/team.html'
-    })
     // I add this - end
     .state('public.menuitems', {
       url: '/menu/{category}',
